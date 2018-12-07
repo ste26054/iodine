@@ -429,7 +429,7 @@ extern int FIO_LOG_LEVEL;
     if (level <= FIO_LOG_LEVEL) {                                              \
       char tmp___log[1024];                                                    \
       int len___log = snprintf(tmp___log, 1000, __VA_ARGS__);                  \
-      if (len___log <= 0 || len___log > 1000) {                                \
+      if (len___log <= 0 || len___log > 1000000) {                                \
         fwrite("ERROR: log line output too long (can't write).", 46, 1,        \
                stderr);                                                        \
         break;                                                                 \
